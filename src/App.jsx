@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react'
-import { CiSearch } from "react-icons/ci";
 import { FaSearch } from "react-icons/fa";
 import './App.css'
 
@@ -30,7 +29,7 @@ function App() {
   async function handleSearchQuery(){
     try{
       setLoading("Cargando...")
-      let f = (await fetch(`http://www.omdbapi.com/?apikey=bb807053&s=${search}`));
+      let f = (await fetch(`https://www.omdbapi.com/?apikey=bb807053&s=${search}`));
       let data = await f.json();
       if (data.Response === "True") {
         console.log(data)
